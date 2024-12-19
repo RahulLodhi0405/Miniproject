@@ -1,0 +1,154 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e3f2fd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative; /* To make sure watermark stays at the bottom */
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+  color: #2196f3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Difficulty Selector */
+label, select {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+/* Game Board */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#game-board div {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+/* Hover Effect on Cells */
+#game-board div:hover {
+  background-color: #bbdefb;
+  transform: scale(1.1);
+}
+
+/* Status and Reset Button */
+#status {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body {
+      padding: 10px;
+  }
+
+  h1 {
+      font-size: 28px;
+      margin-top: 10px;
+  }
+
+  #game-board {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+      gap: 5px;
+  }
+
+  #game-board div {
+      width: 80px;
+      height: 80px;
+      font-size: 28px;
+  }
+
+  label, select {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+
+  #status {
+      font-size: 18px;
+  }
+}
+
+/* Watermark */
+.watermark {
+  position: fixed;
+  bottom: 10px; /* Place the watermark at the bottom of the page */
+  left: 50%;
+  transform: translateX(-50%); /* Center the watermark */
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.3); /* Light color for watermark */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  opacity: 0.6; /* Slightly transparent watermark */
+  pointer-events: none; /* Make sure the watermark doesn't interfere with interactions */
+}
